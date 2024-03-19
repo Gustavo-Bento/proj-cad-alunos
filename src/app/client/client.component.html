@@ -1,0 +1,73 @@
+<div id="fundo">
+  <div class="container form">
+    <div class="p-4 bg-dark bg-opacity-50 row">
+      <div class="m-auto align-item-center">
+        <h3 class="text-center text-white">Cadastro de Alunos</h3>
+        <form [formGroup]="formGroupStudent">
+          <div class="mb-3">
+            <label
+              for="matricula"
+              class="form-label col-form-label text-white bold"
+              >Matricula</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              formControlName="id"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="matricula" class="form-label col-form-label text-white"
+              >Nome</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="matricula" class="form-label col-form-label text-white"
+              >Curso</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="course"
+              formControlName="course"
+            />
+          </div>
+          <button type="submit" class="btn btn-danger" (click)="save()">
+            Salvar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container form">
+    <div class="p-4 bg-dark bg-opacity-50 row">
+      <div class="m-auto align-item-center">
+        <h3 class="text-center text-white">Alunos Cadastrados</h3>
+        <table class="table table-dark opacity-75">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Course</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td>{{ student.id }}</td>
+              <td>{{ student.name }}</td>
+              <td>{{ student.course }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
