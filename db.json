@@ -1,0 +1,24 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Gustavo Ferreira",
+      "course": "Engenharia da Computação"
+    },
+    {
+      "id": "2",
+      "name": "Lucas Calori",
+      "course": "Analise e Desenvolvimento de Sistemas"
+    },
+    {
+      "id": "3",
+      "name": "Flavio Magalhães",
+      "course": "Eventos"
+    },
+    {
+      "id": "4",
+      "name": "Caio Pinto",
+      "course": "Gestão Empresarial"
+    }
+  ]
+}

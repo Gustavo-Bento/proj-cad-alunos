@@ -1,6 +1,8 @@
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Student } from '../studant';
+import { Student } from '../student';
 import { Component } from '@angular/core';
+import { StudentService } from '../student.service';
+import { subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-students',
@@ -11,7 +13,20 @@ export class StudentsComponent {
   students: Student[] = [];
   formGroupStudent: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  ngOnInit(): void{
+    this.loadStudents();
+  }
+
+  loadStudents(){
+    this.serviee.getStudents().subscribe({
+      next: data => this.students = data
+    });
+  }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private serviee: StudentService
+  ) {
     this.formGroupStudent = formBuilder.group({
       id: [''],
       name: [''],
@@ -19,6 +34,9 @@ export class StudentsComponent {
     });
   }
   save() {
-    this.students.push(this.formGroupStudent.value);
+    this.serviee.save(this.formGroupStudent.value).subscribe({
+      next: data => this.students.push(data)
+    });
+
   }
 }
