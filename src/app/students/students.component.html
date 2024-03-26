@@ -39,9 +39,16 @@
               formControlName="course"
             />
           </div>
-          <button type="submit" class="btn btn-danger" (click)="save()">
-            Salvar
-          </button>
+          <div class="row content">
+            <div class="col button">
+              <button type="submit" class="btn btn-primary" (click)="save()">
+                Salvar
+              </button>
+              <button type="submit" class="btn btn-danger" (click)="save()">
+                Remover
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
