@@ -1,4 +1,4 @@
-<div id="fundo" style="background: url(../../assets/fundo.gif)">
+<div id="fundo" [ngStyle]="{ 'background-image': ' url(./fundo.gif)' }">
   <div class="container form">
     <div class="p-4 bg-dark bg-opacity-50 row">
       <div class="m-auto align-item-center">
@@ -58,12 +58,20 @@
               <td>{{ student.name }}</td>
               <td>{{ student.course }}</td>
               <td>
-                <button type="submit" class="btn btn-danger" (click)="delete(student)">
+                <button
+                  type="submit"
+                  class="btn btn-danger"
+                  (click)="delete(student)"
+                >
                   Remover
                 </button>
               </td>
               <td>
-                <button type="submit" class="btn btn-primary" (click)="edit(student)">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  (click)="edit(student)"
+                >
                   Alterar
                 </button>
               </td>
