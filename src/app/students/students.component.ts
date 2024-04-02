@@ -12,6 +12,7 @@ import { Observable, subscribeOn } from 'rxjs';
 export class StudentsComponent {
   students: Student[] = [];
   formGroupStudent: FormGroup;
+  istEditing: boolean = false;
 
   ngOnInit(): void {
     this.loadStudents();
@@ -33,13 +34,27 @@ export class StudentsComponent {
     });
   }
   save() {
-    this.service.save(this.formGroupStudent.value).subscribe({
-      next: (data) => this.students.push(data),
-    });
+    if (this.istEditing) {
+      this.service.update(this.formGroupStudent.value).subscribe({
+        next: () => {
+          this.loadStudents();
+          this.istEditing = false;
+        },
+      });
+    } else {
+      this.service.save(this.formGroupStudent.value).subscribe({
+        next: (data) => this.students.push(data),
+      });
+    }
+    this.formGroupStudent.reset();
   }
   delete(student: Student) {
     this.service.delete(student).subscribe({
       next: () => this.loadStudents(),
     });
+  }
+  edit(student: Student) {
+    this.formGroupStudent.setValue(student);
+    this.istEditing = true;
   }
 }

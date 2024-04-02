@@ -1,19 +1,19 @@
 {
   "students": [
     {
-      "id": 1,
-      "name": "Paula Dentro",
-      "course": "Gestão Empresarial"
-    },
-    {
-      "id": 2,
-      "name": "Caique Melo",
+      "id": 4,
+      "name": "Caio Pinto",
       "course": "Engenharia da Computação"
     },
     {
-      "id": 3,
-      "name": "Elme Melo de Leite",
-      "course": "Analise e Desenvolvimento de Sistemas"
+      "id": 5,
+      "name": "Paula Dentro",
+      "course": "Administração"
+    },
+    {
+      "id": 6,
+      "name": "Julia Maria",
+      "course": "Matematica"
     }
   ]
 }

@@ -58,12 +58,12 @@
               <td>{{ student.name }}</td>
               <td>{{ student.course }}</td>
               <td>
-                <button type="submit" class="btn btn-danger" (click)="save()">
+                <button type="submit" class="btn btn-danger" (click)="delete(student)">
                   Remover
                 </button>
               </td>
               <td>
-                <button type="submit" class="btn btn-primary" (click)="save()">
+                <button type="submit" class="btn btn-primary" (click)="edit(student)">
                   Alterar
                 </button>
               </td>
