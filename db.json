@@ -1,24 +1,19 @@
 {
   "students": [
     {
-      "id": "1",
-      "name": "Gustavo Ferreira",
+      "id": 1,
+      "name": "Paula Dentro",
+      "course": "Gestão Empresarial"
+    },
+    {
+      "id": 2,
+      "name": "Caique Melo",
       "course": "Engenharia da Computação"
     },
     {
-      "id": "2",
-      "name": "Lucas Calori",
+      "id": 3,
+      "name": "Elme Melo de Leite",
       "course": "Analise e Desenvolvimento de Sistemas"
-    },
-    {
-      "id": "3",
-      "name": "Flavio Magalhães",
-      "course": "Eventos"
-    },
-    {
-      "id": "4",
-      "name": "Caio Pinto",
-      "course": "Gestão Empresarial"
     }
   ]
 }
