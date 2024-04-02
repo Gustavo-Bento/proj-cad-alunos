@@ -2,7 +2,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Student } from '../student';
 import { Component } from '@angular/core';
 import { StudentService } from '../student.service';
-import { subscribeOn } from 'rxjs';
+import { Observable, subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-students',
@@ -13,18 +13,18 @@ export class StudentsComponent {
   students: Student[] = [];
   formGroupStudent: FormGroup;
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.loadStudents();
   }
 
-  loadStudents(){
-    this.serviee.getStudents().subscribe({
-      next: data => this.students = data
+  loadStudents() {
+    this.service.getStudents().subscribe({
+      next: (data) => (this.students = data),
     });
   }
   constructor(
     private formBuilder: FormBuilder,
-    private serviee: StudentService
+    private service: StudentService
   ) {
     this.formGroupStudent = formBuilder.group({
       id: [''],
@@ -33,9 +33,13 @@ export class StudentsComponent {
     });
   }
   save() {
-    this.serviee.save(this.formGroupStudent.value).subscribe({
-      next: data => this.students.push(data)
+    this.service.save(this.formGroupStudent.value).subscribe({
+      next: (data) => this.students.push(data),
     });
-
+  }
+  delete(student: Student) {
+    this.service.delete(student).subscribe({
+      next: () => this.loadStudents(),
+    });
   }
 }
