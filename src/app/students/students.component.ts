@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Student } from '../student';
 import { Component } from '@angular/core';
 import { StudentService } from '../student.service';
@@ -29,8 +29,8 @@ export class StudentsComponent {
   ) {
     this.formGroupStudent = formBuilder.group({
       id: [''],
-      name: [''],
-      course: [''],
+      name: ['',[Validators.minLength(3)]],
+      course: ['',[Validators.required]],
     });
   }
   save() {
