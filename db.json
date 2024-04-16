@@ -1,23 +1,13 @@
 {
   "students": [
     {
-      "id": 4,
-      "name": "Caio Pinto",
+      "id": 1,
+      "name": "Gustavo",
       "course": "Engenharia da Computação"
     },
     {
-      "id": 5,
-      "name": "Paula Dentro",
-      "course": "Administração"
-    },
-    {
-      "id": 6,
-      "name": "Julia Maria",
-      "course": "Matematica"
-    },
-    {
-      "id": 7,
-      "name": "KIka Ben",
+      "id": 2,
+      "name": "Gabriel",
       "course": "Analise e Desenvolvimento de Sistemas"
     }
   ]

@@ -12,7 +12,6 @@ export class StudentsComponent {
   students: Student[] = [];
   formGroupStudent: FormGroup;
   istEditing: boolean = false;
-  isSubmited: boolean = false;
 
   ngOnInit(): void {
     this.loadStudents();
@@ -34,25 +33,23 @@ export class StudentsComponent {
     });
   }
   save() {
-    this.isSubmited = true;
-
     if (this.formGroupStudent.valid) {
       if (this.istEditing) {
         this.service.update(this.formGroupStudent.value).subscribe({
           next: () => {
             this.loadStudents(),
               (this.istEditing = false),
-              (this.isSubmited = false);
+            this.formGroupStudent.reset();
           },
         });
       } else {
         this.service.save(this.formGroupStudent.value).subscribe({
           next: (data) => {
-            this.students.push(data), (this.isSubmited = false);
+            this.students.push(data);
+            this.formGroupStudent.reset();
           },
         });
       }
-      this.formGroupStudent.reset();
     }
   }
   delete(student: Student) {

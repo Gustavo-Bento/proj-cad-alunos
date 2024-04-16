@@ -2,7 +2,7 @@
   id="fundo"
   [ngStyle]="{ 'background-image': ' url(../../../../assets/fundo.gif)' }"
 >
-  <div class="container form">
+  <div class="form">
     <div class="p-4 bg-dark bg-opacity-50 row">
       <div class="m-auto align-item-center">
         <h3 class="text-center text-white">Cadastro de Alunos</h3>
@@ -19,13 +19,13 @@
               formControlName="name"
             />
             <small
-              *ngIf="isSubmited && name.hasError('minlength')"
+              *ngIf="course.touched && name.hasError('minlength')"
               class="text-white bg-danger p-1"
             >
               * O nome tem que ter no minimo 3 caracteres!
             </small>
             <small
-              *ngIf="isSubmited && name.hasError('required')"
+              *ngIf="course.touched && name.hasError('required')"
               class="text-white bg-danger p-1"
             >
               * O nome não poder estar vazio. Preencha-o!
@@ -44,7 +44,11 @@
           </div>
           <div class="row content">
             <div class="col button">
-              <button type="submit" class="btn btn-primary" (click)="save()">
+              <button type="submit"
+              [disabled]="!formGroupStudent.valid"
+              class="btn btn-primary"
+              (click)="save()"
+              >
                 Salvar
               </button>
             </div>
