@@ -1,4 +1,7 @@
-<div id="fundo" [ngStyle]="{ 'background-image': ' url(../../../../assets/fundo.gif)' }">
+<div
+  id="fundo"
+  [ngStyle]="{ 'background-image': ' url(../../../../assets/fundo.gif)' }"
+>
   <div class="container form">
     <div class="p-4 bg-dark bg-opacity-50 row">
       <div class="m-auto align-item-center">
@@ -15,6 +18,18 @@
               id="name"
               formControlName="name"
             />
+            <small
+              *ngIf="isSubmited && name.hasError('minlength')"
+              class="text-white bg-danger p-1"
+            >
+              * O nome tem que ter no minimo 3 caracteres!
+            </small>
+            <small
+              *ngIf="isSubmited && name.hasError('required')"
+              class="text-white bg-danger p-1"
+            >
+              * O nome não poder estar vazio. Preencha-o!
+            </small>
           </div>
           <div class="mb-3">
             <label for="matricula" class="form-label col-form-label text-white"
