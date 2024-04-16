@@ -3,7 +3,7 @@
   [ngStyle]="{ 'background-image': ' url(../../../../assets/fundo.gif)' }"
 >
   <div class="form">
-    <div class="p-4 bg-dark bg-opacity-50 row">
+    <div class="p-4 bg-dark bg-opacity-75">
       <div class="m-auto align-item-center">
         <h3 class="text-center text-white">Cadastro de Alunos</h3>
         <form [formGroup]="formGroupStudent">
@@ -59,13 +59,13 @@
   </div>
 
   <div class="container form">
-    <div class="p-4 bg-dark bg-opacity-50 row">
+    <div class="p-4 bg-dark bg-opacity-75">
       <div class="m-auto align-item-center">
         <h3 class="text-center text-white">Alunos Cadastrados</h3>
-        <table class="table table-dark opacity-75">
+        <table class="table table-dark">
           <thead>
             <tr>
-              <th scope="col">Id</th>
+              <th scope="col p2">Id</th>
               <th scope="col">Nome</th>
               <th scope="col">Course</th>
               <th scope="col" colspan="2">Opções</th>
